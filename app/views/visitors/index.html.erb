@@ -1,1 +1,45 @@
-<h3>Welcome</h3>
+<h3>Welcome to Do Your Share</h3>
+
+<div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem non provident ratione natus, nobis sapiente corrupti veritatis inventore ducimus ipsum harum dolorum delectus qui deserunt a laborum nemo vero ab.</p>
+</div>
+
+<div class="container">
+
+
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag ("1.jpg") %>
+    <br>
+    Rating 1 - No litter
+  </div>
+  <div class="col-md-3">
+    <%= image_tag ("2.JPG") %>
+    <br>
+    Rating 2 - Slightly littered 
+  </div>
+  <div class="col-md-3">
+    <%= image_tag ("3.jpg") %>
+    <br>
+    Rating 3 - Littered
+  </div>
+  <div class="col-md-3">
+    <%= image_tag ("4.jpg") %>
+    <br>
+    Rating 4 - Extremely littered
+  </div>
+</div>
+
+
+<div style="clear:both" class="clearfix"></div>
+
+
+<div class="row" style="padding-top:30px">
+  <div class="col text-center col-md-12">
+    <%= form_for User.new, url: "/login" do |f| %>
+    <%= f.text_field :email, placeholder:"Please enter your email" %>
+    <%= f.submit "Get Started" %>
+    <% end %>
+  </div>
+</div>
+</div>

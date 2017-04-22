@@ -1,0 +1,52 @@
+<iframe
+  width="800"
+  height="400"
+  frameborder="0" style="border:0"
+  src='https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDwQ4E2ugyO_MaeRRZZk_SpDxiBsIW_FKU&location=<%= "#{location_rating.lat},#{location_rating.long}" %>&heading=180&pitch=-25&fov=35'
+  allowfullscreen>
+</iframe>
+
+<%= form_for(location_rating) do |f| %>
+  <% if location_rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(location_rating.errors.count, "error") %> prohibited this location_rating from being saved:</h2>
+
+      <ul>
+      <% location_rating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="display:none" class="field">
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+  </div>
+
+  <div style="display:none" class="field">
+    <%= f.label :long %>
+    <%= f.text_field :long %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.radio_button :rating, 1 %> 1 - No litter 
+    <br>
+    <%= f.radio_button :rating, 2 %> 2 - Slightly littered
+    <br>
+    <%= f.radio_button :rating, 3 %> 3 - Littered 
+    <br>
+    <%= f.radio_button :rating, 4 %> 4 - Extremely littered 
+  </div>
+
+
+  <div style="display:none" class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Next", class: 'btn btn-lg' %>
+  </div>
+<% end %>

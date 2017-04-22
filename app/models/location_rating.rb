@@ -1,0 +1,2 @@
+class LocationRating < ApplicationRecord
+end
